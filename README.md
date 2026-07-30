@@ -89,7 +89,6 @@ Includes:
 - Feature distributions
 - Correlation analysis
 - Missing value analysis
-- Statistical testing
 - Visualization of important dataset characteristics
 
 ---
