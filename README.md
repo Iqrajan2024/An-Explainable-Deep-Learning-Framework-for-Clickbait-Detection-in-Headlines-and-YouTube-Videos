@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the implementation of my Final Year Project (FYP), **"An Explainable Deep Learning Framework for Clickbait Detection in Headlines and YouTube Videos."**
+This repository contains the implementation of our Final Year Project (FYP), **"An Explainable Deep Learning Framework for Clickbait Detection in Headlines and YouTube Videos."**
 
 The project proposes **ClickDetect AI**, an AI-powered browser extension that detects clickbait in online news headlines and YouTube videos in real time. The system combines deep learning models with Explainable Artificial Intelligence (XAI) techniques to not only classify content as clickbait or non-clickbait, but also explain the factors that influenced each prediction.
 
@@ -12,6 +12,7 @@ The system consists of:
 - A FastAPI backend server
 - Deep learning models for headline and multimodal clickbait detection
 - SHAP-based explainability modules
+- GRAD-CAM based visualizations
 - Interactive user interface for prediction results
 
 ---
