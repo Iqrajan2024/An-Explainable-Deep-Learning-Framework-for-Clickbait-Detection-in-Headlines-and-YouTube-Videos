@@ -1,0 +1,178 @@
+body {
+
+    width:260px;
+    height:320px;
+
+    margin:0;
+
+    font-family:
+    Arial,
+    sans-serif;
+
+    background:#ffffff;
+
+    overflow:hidden;
+
+}
+
+
+
+.container {
+
+    padding:14px;
+
+    text-align:center;
+
+}
+
+
+
+/* Header */
+
+h1 {
+
+    font-size:20px;
+
+    margin:5px 0;
+
+    color:#14213d;
+
+    font-weight:700;
+
+}
+
+
+.subtitle {
+
+    color:#64748b;
+
+    font-size:12px;
+
+    margin-top:5px;
+
+}
+
+
+
+/* Initial instruction card */
+
+.status-card {
+
+    margin-top:20px;
+
+    height:180px;
+
+    padding:12px;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    text-align:center;
+
+    background:white;
+
+    border-radius:16px;
+
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+
+.status-card p {
+
+    font-size:13px;
+
+    line-height:1.4;
+
+    color:#111827;
+
+}
+
+
+
+/* Document icon */
+
+.status-icon {
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:15px;
+
+    background:#eef5ff;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    margin-bottom:15px;
+
+}
+
+.main-icon {
+
+    width:30px;
+
+    height:30px;
+
+}
+
+
+/* Bottom buttons */
+
+.mode-buttons {
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+
+
+}
+
+.mode-buttons img{
+    width:16px;
+    height:16px;
+}
+
+
+
+.mode-buttons button {
+
+
+    flex:1;
+
+    height:32px;
+
+    border-radius:8px;
+
+    border:1px solid #dbe3f0;
+
+    background:#EEF5FF;
+
+    font-size:12px;
+
+}
+
+

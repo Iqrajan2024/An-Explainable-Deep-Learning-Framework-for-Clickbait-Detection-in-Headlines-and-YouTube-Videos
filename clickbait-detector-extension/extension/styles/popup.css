@@ -1,0 +1,859 @@
+/*
+===========================================================
+ClickDetect AI
+Modern Popup UI
+===========================================================
+*/
+
+#clickdetect-popup{
+
+    position:fixed;
+
+    width:340px;
+
+    max-width:340px;
+
+    height: 420px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    box-shadow:0 10px 28px rgba(0,0,0,.18);
+
+    border:1px solid #E5E7EB;
+
+    z-index:999999999;
+
+    display:none;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    animation:cdFade .18s ease;
+
+}
+
+
+/*=========================================================*/
+
+@keyframes cdFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================================*/
+
+.cd-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 16px;
+
+    background:#1E293B;
+
+    color:white;
+
+}
+
+.cd-header h2{
+
+    margin:0;
+
+    font-size:17px;
+
+    font-weight:700;
+
+}
+
+.cd-icon-btn{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+.cd-icon-btn:hover{
+
+    transform:scale(1.15);
+
+    opacity:.85;
+
+}
+
+/*=========================================================*/
+
+.cd-body{
+
+      height: calc(420px - 60px);
+
+      overflow-y: auto;
+
+      overflow-x: hidden;
+
+      padding: 16px;
+
+}
+
+.cd-body::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.cd-body::-webkit-scrollbar-thumb{
+
+    background:#CBD5E1;
+
+    border-radius:10px;
+
+}
+
+.cd-body::-webkit-scrollbar-thumb:hover{
+
+    background:#94A3B8;
+
+}
+
+/*=========================================================
+Prediction Card
+=========================================================*/
+
+.cd-prediction-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:22px;
+
+}
+
+.cd-confidence-circle{
+
+    width:72px;
+
+    height:72px;
+
+    border:5px solid;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#F8FAFC;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.cd-confidence-circle span{
+
+    font-size:18px;
+
+    margin-left:2px;
+
+}
+
+
+
+/*=========================================
+Result Card
+=========================================*/
+
+.cd-result-card{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:10px;
+
+margin:8px;
+
+border-radius:18px;
+
+background:#ffffff;
+
+border:1px solid #ececec;
+
+box-shadow:0 6px 18px rgba(0,0,0,.06);
+
+}
+
+.cd-result-card.safe{
+
+background:#f5fff7;
+
+}
+
+.cd-result-card.danger{
+
+background:#fff3f3;
+
+}
+
+.cd-score-circle{
+
+width:58px;
+
+height:58px;
+
+border:5px solid;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:18px;
+
+font-weight:700;
+
+background:white;
+
+}
+
+.cd-result-text{
+
+flex:1;
+
+}
+
+.cd-prediction-text{
+
+font-size:25px;
+
+font-weight:800;
+
+margin-bottom:8px;
+
+}
+
+.cd-confidence-badge{
+
+display:inline-block;
+
+padding:8px 10px;
+
+border-radius:20px;
+
+background:#eef2ff;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+/*=========================================
+Analysis Summary
+=========================================*/
+
+.cd-summary-card{
+
+margin:18px;
+
+padding:18px;
+
+border-radius:16px;
+
+background:#f8f9fc;
+
+border-left:5px solid #2563eb;
+
+}
+
+.cd-section-title{
+
+font-size:17px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+}
+
+.cd-summary-card p{
+
+line-height:1.6;
+
+color:#555;
+
+margin:0;
+
+}
+
+/*=========================================
+Positive Negative Grid
+=========================================*/
+
+.cd-word-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:12px;
+
+margin:14px 18px;
+
+}
+
+.cd-word-card{
+
+padding:12px;
+
+border-radius:14px;
+
+}
+
+.cd-word-card h4{
+
+margin:0 0 12px;
+
+font-size:15px;
+
+}
+
+.cd-word-card.safe{
+
+    background:#F0FDF4;
+
+    border:1px solid #BBF7D0;
+
+}
+
+.cd-word-card.risk{
+
+    background:#FEF2F2;
+
+    border:1px solid #FECACA;
+
+}
+
+/*=========================================
+New Chips
+=========================================*/
+
+.cd-chip{
+
+display:inline-block;
+
+padding:5px 10px;
+
+margin:2px;
+
+border-radius:14px;
+
+font-size:12px;
+
+font-weight:600;
+
+
+}
+
+.cd-chip.safe{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+.cd-chip.risk{
+
+    background:#FEE2E2;
+
+    color:#B91C1C;
+
+}
+
+/*=========================================
+Feature Importance
+=========================================*/
+
+.cd-importance{
+
+margin:20px;
+
+}
+
+.cd-importance h3{
+
+margin-bottom:16px;
+
+font-size:18px;
+
+}
+
+.cd-bar-item{
+
+margin-bottom:18px;
+
+}
+
+.cd-bar-header{
+
+display:flex;
+
+justify-content:space-between;
+
+font-weight:600;
+
+margin-bottom:6px;
+
+}
+
+.cd-bar{
+
+height:10px;
+
+background:#ececec;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+.cd-fill{
+
+height:100%;
+
+border-radius:20px;
+
+transition:width .4s ease;
+
+}
+
+.cd-fill.positive{
+
+background:#ef4444;
+
+}
+
+.cd-fill.negative{
+
+background:#22c55e;
+
+}
+
+/*=========================================
+Footer
+=========================================*/
+
+.cd-footer{
+
+padding:12px;
+
+}
+
+.cd-primary-btn{
+
+width:100%;
+
+padding:10px;
+
+border:none;
+
+border-radius:12px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.cd-primary-btn:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-2px);
+
+}
+
+.cd-none{
+
+    color:#9CA3AF;
+
+    font-style:italic;
+
+    margin-top:10px;
+
+}
+
+.cd-chip-container{
+
+    margin-top:12px;
+
+}
+
+/*=========================================================
+Explanation Cards
+=========================================================*/
+
+.cd-card{
+
+    background:#ffffff;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:16px;
+
+    padding:14px;
+
+    margin-bottom:14px;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+}
+
+.cd-card h3{
+
+    margin:0 0 14px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.cd-headline{
+
+    margin:0;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    color:#1F2937;
+
+    font-weight:500;
+
+}
+
+.cd-summary{
+
+    margin:0;
+
+    line-height:1.8;
+
+    color:#4B5563;
+
+    font-size:15px;
+
+}
+
+.cd-feature{
+
+    margin-top:10px;
+
+}
+
+.cd-feature-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:8px;
+
+}
+
+.cd-feature-top span:first-child{
+
+    font-weight:600;
+
+    color:#111827;
+
+}
+
+.cd-feature-top span:last-child{
+
+    color:#6B7280;
+
+    font-size:13px;
+
+}
+
+
+
+.cd-bar{
+
+    height:10px;
+
+    background:#ECECEC;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.cd-bar-fill{
+
+    height:100%;
+
+    border-radius:999px;
+
+    transition:width .4s ease;
+
+}
+
+.cd-bar-fill.positive{
+
+    background:#EF4444;
+
+}
+
+.cd-bar-fill.negative{
+
+    background:#22C55E;
+
+}
+
+.cd-footer-note{
+
+    margin-top:20px;
+
+    font-size:13px;
+
+    color:#6B7280;
+
+    text-align:center;
+
+}
+
+.cd-empty{
+
+    text-align:center;
+
+    color:#6B7280;
+
+    padding:18px;
+
+    font-style:italic;
+
+}
+
+/*=========================================================
+Legend
+=========================================================*/
+
+.cd-legend{
+
+    display:flex;
+
+    gap:20px;
+
+    margin:8px 0 12px;
+
+    flex-wrap:wrap;
+
+}
+
+.cd-legend-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+.cd-legend-color{
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:4px;
+
+}
+
+.cd-legend-color.increase{
+
+    background:#EF4444;
+
+}
+
+.cd-legend-color.decrease{
+
+    background:#22C55E;
+
+}
+
+/*=========================================================
+Loading Toast
+=========================================================*/
+
+.cd-loading-toast{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    width:220px;
+    height:60px;
+
+    background:#2563EB;
+    color:#fff;
+
+    border-radius:12px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+
+}
+
+.cd-loading-text{
+
+    font-size:15px;
+    font-weight:600;
+    color:#fff;
+
+}
+
+.cd-spinner{
+
+    width:18px;
+    height:18px;
+
+    border:3px solid rgba(255,255,255,.35);
+    border-top:3px solid #fff;
+
+    border-radius:50%;
+
+    animation:cdSpin .8s linear infinite;
+
+}
+
+@keyframes cdSpin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/*======================================
+Backend Connection Error
+======================================*/
+
+.cd-error-toast{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    width:220px;
+    height:60px;
+
+    background:#ec0808;
+    color:#fff;
+
+    border-radius:12px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+
+}
+
+.cd-error-text{
+
+    font-size:14px;
+    font-weight:600;
+    color:#fff;
+
+    }
+
+
+    .cd-error-icon{
+
+        width:30px;
+
+        height:30px;
+
+        display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-left:12px
+
+}
+
+

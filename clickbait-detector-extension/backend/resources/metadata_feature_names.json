@@ -1,0 +1,9 @@
+[
+    "view_count",
+    "like_count",
+    "comment_count",
+    "duration_seconds",
+    "channel_subscribers",
+    "likes_per_view",
+    "comments_per_view"
+]

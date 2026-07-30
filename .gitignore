@@ -1,0 +1,21 @@
+ # Trained models
+*.keras
+*.h5
+*.pb
+
+# SHAP background arrays
+*.npy
+
+# Pickle files
+*.pkl
+
+# Python cache
+__pycache__/
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment variables
+.env
